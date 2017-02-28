@@ -1,0 +1,11 @@
+-e git://github.com/ctengiz/bottle.git#egg=bottle
+sqlalchemy
+bottle-sqlalchemy
+beaker
+marrow.mailer
+pillow
+html2text
+python3-ldap
+
+fdb
+#mysqlclient
