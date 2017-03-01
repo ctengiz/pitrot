@@ -1,4 +1,4 @@
-<h1>Göl Yatırım Holding İş Takip sisteminde üyeliğiniz tanımlanmıştır.</h1>
+<h1></h1>
 
 <p>Kullanıcı Adınız: {{code}}</p>
 

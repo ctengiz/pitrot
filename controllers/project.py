@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 Modülün Açıklaması
 
@@ -242,7 +240,9 @@ def admin_project(db, act="list", ndx=0):
             _usrs = []
             for _usr_id in _pl:
                 _usr_role_id = _rl[_pl.index(_usr_id)]
-                _usr = Project_Usr(usr_id = _usr_id, project_id = arec.id, usrrole_id = _usr_role_id)
+                _usr = Project_Usr(usr_id=_usr_id,
+                                   project_id=arec.id,
+                                   usrrole_id=_usr_role_id)
                 _usrs.append(_usr)
             arec.users = _usrs
 

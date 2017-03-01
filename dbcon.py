@@ -35,15 +35,23 @@ plugin_sqlalchemy = None
 
 revision = '$Revision$'
 
+
 def init_sa(conf):
     global engine
     global plugin_sqlalchemy
 
-    engine = create_engine('firebird+fdb://%s:%s@%s/%s?charset=UTF8' % (conf['database.db_user'],
-                                                                        conf['database.db_pass'],
-                                                                        conf['database.db_server'],
-                                                                        conf['database.db_path']),
-                           echo=conf['database.echo_sqlalchemy'] == '1')
+    engine = create_engine('firebird+fdb://%s:%s@%s/%s/%s?charset=UTF8' %
+                           (
+                               conf['database.db_user'],
+                               conf['database.db_pass'],
+                               conf['database.db_server'],
+                               conf['database.db_path'],
+                               conf['database.db_name']
+                           ),
+                           echo=conf['database.echo_sqlalchemy'] == '1',
+                           retaining=True,
+                           enable_rowcount=False
+                           )
 
     """
     engine = create_engine('mysql+mysqldb://root:@127.0.0.1:3306/pitrot?charset=utf8',
@@ -101,7 +109,6 @@ class MkMixin(object):
     __table_args__ = {'autoload': False,  # Bu seçenek true olursa, veritabanından otomatik yüklemeye çalışıyor...
                        'extend_existing': True}
     #__mapper_args__= {'exclude_properties': ['cnt_bin', 'cnt_thb']}  #'always_refresh': True}
-
 
 
 class Config(Base, MkMixin):
@@ -183,9 +190,9 @@ class UsrGrp(Base, MkMixin):
     code = Column(String(30), unique=True, nullable=False)
 
     members = relationship('UsrGrp_Usr',
-                            backref="b_usrgrp",
-                            primaryjoin="UsrGrp_Usr.usrgrp_id==UsrGrp.id",
-                            cascade="all, delete-orphan")
+                           backref="b_usrgrp",
+                           primaryjoin="UsrGrp_Usr.usrgrp_id==UsrGrp.id",
+                           cascade="all, delete-orphan")
 
 
 class UsrGrp_Usr(Base, MkMixin):

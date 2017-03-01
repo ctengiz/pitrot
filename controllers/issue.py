@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 """
 Modülün Açıklaması
@@ -6,6 +5,7 @@ Modülün Açıklaması
 __author__ : Çağatay Tengiz
 __date__   : 19.12.2013
 """
+
 import datetime
 import json
 
@@ -22,8 +22,6 @@ from utils import check_usr_project, list_issue_usr_emails, send_mail,\
     is_usr_admin
 
 subApp = Bottle()
-
-
 
 
 def write_changeset(db, issue_id):

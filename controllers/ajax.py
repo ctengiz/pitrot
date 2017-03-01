@@ -1,11 +1,10 @@
-# -*- coding: utf-8 -*-
-
 """
 Modülün Açıklaması
 
 __author__ : Çağatay Tengiz
 __date__   : 07.01.2014
 """
+
 import json
 
 from sqlalchemy import and_, or_, exists

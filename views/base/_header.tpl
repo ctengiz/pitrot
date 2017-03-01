@@ -7,24 +7,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="apple-touch-icon" sizes="57x57" href="/static/assets/ico/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/static/assets/ico/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/static/assets/ico/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/static/assets/ico/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/static/assets/ico/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/static/assets/ico/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/static/assets/ico/apple-touch-icon-144x144.png">
-    <link rel="icon" type="image/png" href="/static/assets/ico/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/static/assets/ico/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="/static/assets/ico/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="/static/assets/ico/manifest.json">
-    <link rel="shortcut icon" href="/static/assets/ico/favicon.ico">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-TileImage" content="/static/assets/ico/mstile-144x144.png">
-    <meta name="msapplication-config" content="/static/assets/ico/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-
-
     <title>{{config['general.site_title']}}</title>
 
     <!-- Font -->
@@ -36,79 +18,74 @@
     -->
 
     <!-- Bootstrap core CSS -->
-    <link href="/static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Fontawesome -->
-    <link href="/static/lib/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-
-    <script src="/static/lib/jquery-2.1.4.min.js"></script>
-    <script src="/static/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- JQuery UI -->
     <!--
-    <script src="/static/lib/jquery-ui-1.11.4.min.js"></script>
+    <script src="/static/vendor/jquery-ui-1.11.4.min.js"></script>
     -->
 
-
     <!-- Date Picker -->
-    <link href="/static/lib/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet">
-    <script src="/static/lib/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <link href="/static/vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css" rel="stylesheet">
+    <script src="/static/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 
     <!-- Select2 -->
-    <link href="/static/lib/select2-3.5.2/select2.css" rel="stylesheet">
-    <link href="/static/lib/select2-3.5.2/select2-bootstrap.css" rel="stylesheet">
-    <script src="/static/lib/select2-3.5.2/select2.min.js"></script>
+    <link href="/static/vendor/select2/dist/css/select2.min.css" rel="stylesheet">
+    <script src="/static/vendor/select2/dist/js/select2.full.min.js"></script>
 
     <!-- Validation -->
-    <script src="/static/lib/jquery-validation/jquery.validate.min.js"></script>
+    <script src="/static/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
 
     <!-- summernote css/js-->
-    <link rel="stylesheet" href="/static/lib/summernote/summernote.css" />
-    <script type="text/javascript" src="/static/lib/summernote/summernote.min.js"></script>
+    <link rel="stylesheet" href="/static/vendor/summernote/dist/summernote.css" />
+    <script type="text/javascript" src="/static/vendor/summernote/dist/summernote.min.js"></script>
 
     <!-- x-editable -->
-    <link href="/static/lib/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
-    <script src="/static/lib/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+    <link href="/static/vendor/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+    <script src="/static/vendor/x-editable/dist/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 
     <!-- Table Sorter -->
-    <link rel="stylesheet" href="/static/lib/tablesorter-2.22.3/css/theme.bootstrap.min.css">
-    <script type="text/javascript" src="/static/lib/tablesorter-2.22.3/js/jquery.tablesorter.min.js"></script>
-    <script type="text/javascript" src="/static/lib/tablesorter-2.22.3/js/jquery.tablesorter.widgets.min.js"></script>
-    <link rel="stylesheet" href="/static/lib/tablesorter-2.22.3/css/jquery.tablesorter.pager.min.css">
-   	<script type="text/javascript" src="/static/lib/tablesorter-2.22.3/js/extras/jquery.tablesorter.pager.min.js"></script>
+    <link rel="stylesheet" href="/static/vendor/tablesorter/dist/css/theme.bootstrap.min.css">
+    <script type="text/javascript" src="/static/vendor/tablesorter/dist/js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="/static/vendor/tablesorter/dist/js/jquery.tablesorter.widgets.min.js"></script>
+    <link rel="stylesheet" href="/static/vendor/tablesorter/dist/css/jquery.tablesorter.pager.min.css">
+   	<script type="text/javascript" src="/static/vendor/tablesorter/dist/js/extras/jquery.tablesorter.pager.min.js"></script>
 
     <!-- jQuery Upload File -->
-    <script type="text/javascript" src="/static/lib/jquery.form.min.js"></script>
-    <link rel="stylesheet" href="/static/lib/jquery-upload-file/css/uploadfile.css">
-    <script type="text/javascript" src="/static/lib/jquery-upload-file/js/jquery.uploadfile.js"></script>
+    <script type="text/javascript" src="/static/vendor/jquery-form/dist/jquery.form.min.js"></script>
+    <link rel="stylesheet" href="/static/vendor/jquery-upload-file/css/uploadfile.css">
+    <script type="text/javascript" src="/static/vendor/jquery-upload-file/js/jquery.uploadfile.js"></script>
 
     <!-- Moment -->
-    <script type="text/javascript" src="/static/lib/moment/moment.min.js"></script>
+    <script type="text/javascript" src="/static/vendor/moment/min/moment.min.js"></script>
 
     <!-- Full Calendar -->
-    <link rel="stylesheet" href="/static/lib/fullcalendar/fullcalendar.min.css">
-    <script type="text/javascript" src="/static/lib/fullcalendar/fullcalendar.min.js"></script>
-    <script type="text/javascript" src="/static/lib/fullcalendar/lang/tr.js"></script>
+    <link rel="stylesheet" href="/static/vendor/fullcalendar/dist/fullcalendar.min.css">
+    <script type="text/javascript" src="/static/vendor/fullcalendar/dist/fullcalendar.min.js"></script>
+    <!--
+    #todo: i18n support
+    <script type="text/javascript" src="/static/vendor/fullcalendar/lang/tr.js"></script>
+    -->
 
     <!-- Excellent Export -- https://github.com/jmaister/excellentexport -->
-    <script type="text/javascript" src="/static/lib/excellentexport.min.js"></script>
+    <script type="text/javascript" src="/static/vendor/excellentexport/excellentexport.min.js"></script>
 
     <!-- Bootbox -->
-    <script type="text/javascript" src="/static/lib/bootbox.min.js"></script>
+    <script type="text/javascript" src="/static/vendor/bootbox.js/bootbox.js"></script>
 
     <!-- SimpleMDE -->
-    <script src="/static/lib/simplemde/simplemde.min.js"></script>
-    <link href="/static/lib/simplemde/simplemde.min.css" rel="stylesheet">
+    <script src="/static/vendor/simplemde/dist/simplemde.min.js"></script>
+    <link href="/static/vendor/simplemde/dist/simplemde.min.css" rel="stylesheet">
 
     <!-- Base Css & Js -->
     <!-- <link href="/static/pitrot.css?4" rel="stylesheet"> -->
-    <script src="/static/lib/pitrot.js?7"></script>
-    <link href="/static/lib/base.css?6" rel="stylesheet">
+    <script src="/static/pitrot.js"></script>
+    <link href="/static/pitrot.css" rel="stylesheet">
 
 </head>
 

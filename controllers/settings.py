@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 Modülün Açıklaması
 
@@ -86,7 +84,6 @@ def admin_settings_post(db):
 
     with open('%s/config.ini' % request.app.config['general.base_path'], 'w+', encoding="utf-8") as configfile:
         aconfig.write(configfile)
-
 
     for section in aconfig.sections():
         for key, value in aconfig.items(section):

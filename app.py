@@ -6,7 +6,7 @@ __date__   : 15.11.2013
 """
 
 import os
-import imp
+import importlib
 import logging
 import sys
 
@@ -18,7 +18,7 @@ from sqlalchemy.orm.scoping import scoped_session
 from i18n import _
 import dbcon
 import utils
-import setup
+import install
 from controllers.index import index
 
 #Bottle Max Mem Size Limit
@@ -32,51 +32,30 @@ else:
 baseApp = bottle.Bottle()
 
 
-def run_app(do_debug=True):
-
-    if not(os.path.exists(BASE_PATH + '/config.ini')):
-        baseApp.config['general.base_path'] = BASE_PATH
-
-        baseApp.route('/', method=['GET', 'POST'], callback=setup.do_setup)
-        baseApp.route('/setup_ok', method=['GET', 'POST'], callback=setup.setup_ok)
-        _cookie_expires = 18000
-        setup.in_setup = True
-    else:
-        init_app()
-        _cookie_expires = int(baseApp.config['auth.session_timeout'])
-
-    return SessionMiddleware(baseApp, {'session.type': 'file',
-                                       'session.cookie_expires': _cookie_expires,
-                                       'session.data_dir': BASE_PATH + '/sessions',
-                                       'session.auto': True})
-
-def init_app():
-    #init sa
-    dbcon.init_sa(baseApp.config)
-    baseApp.install(dbcon.plugin_sqlalchemy)
-
-    #Importing controllers
-    _controllers_dir = '%s/controllers/' %(BASE_PATH)
+def sub_import(asrc):
+    _controllers_dir = '%s/%s/' %(BASE_PATH, asrc)
     _lst = os.listdir(_controllers_dir)
     for _fname in _lst:
         _module_name, _module_ext = os.path.splitext(_fname)
         _module_path = '%s%s' %(_controllers_dir, _fname)
         if not os.path.isdir(_module_path) and _fname[0:2] != '__' and _module_ext == '.py':
-            module = imp.load_source(_module_name, _module_path)
-
+            module = importlib.import_module('%s.%s' %(asrc, _module_name))
             module.subApp.install(dbcon.plugin_sqlalchemy)
             baseApp.merge(module.subApp.routes)
 
-    #todo: bottle can not load utf-8 config files so we made a workaround
-    #baseApp.config.load_config('%s/config.ini' %os.path.abspath(os.path.dirname(__file__)))
-    """
-    aconfig = utils.read_config_file(os.path.abspath(os.path.dirname(__file__)))
-    for section in aconfig.sections():
-        for key, value in aconfig.items(section):
-            key = section + '.' + key
-            baseApp.config[key] = value
-    """
+
+def init_app():
+    #load config
+    baseApp.config.load_config('%s/config.ini' %BASE_PATH)
     baseApp.config['general.base_path'] = BASE_PATH
+
+    #init sa
+    dbcon.init_sa(baseApp.config)
+    baseApp.install(dbcon.plugin_sqlalchemy)
+
+    #Importing controllers
+    sub_import('controllers')
+    sub_import('apis')
 
     #logging
     if baseApp.config['general.debugging_on'] == '1':
@@ -95,6 +74,25 @@ def init_app():
     bottle.BaseTemplate.defaults['render_comment'] = utils.render_comment
 
 
+def run_app(do_debug=True):
+    if not(os.path.exists(BASE_PATH + '/config.ini')):
+        baseApp.config['general.base_path'] = BASE_PATH
+
+        baseApp.route('/', method=['GET', 'POST'], callback=install.do_setup)
+        baseApp.route('/setup_ok', method=['GET', 'POST'], callback=install.setup_ok)
+        _cookie_expires = 18000
+        install.in_setup = True
+    else:
+        init_app()
+        _cookie_expires = int(baseApp.config['auth.session_timeout'])
+
+    return SessionMiddleware(baseApp, {'session.type': 'file',
+                                       'session.cookie_expires': _cookie_expires,
+                                       'session.data_dir': BASE_PATH + '/sessions',
+                                       'session.auto': True})
+
+
+
 @baseApp.hook('before_request')
 def setup_request():
     s = bottle.request.environ['beaker.session']
@@ -103,7 +101,7 @@ def setup_request():
     bottle.request.session = s
 
     dst_path = bottle.request.urlparts.path.split('/')[1]
-    if setup.in_setup:
+    if install.in_setup:
         return
 
     if baseApp.config['auth.login_required'] == '1':

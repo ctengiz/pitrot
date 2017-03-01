@@ -1,0 +1,481 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 30px;
+    margin-top: 40px;
+    overflow-x: hidden;
+    background-color: #ffffff;
+}
+
+
+/* ----------------------------------
+ * Footer
+ * ---------------------------------- */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  background-color: #f5f5f5;
+}
+.footer > .container-fluid {
+  height: 30px;
+}
+
+.footer > .container-fluid > p {
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+/* ----------------------------------
+ * Bootstrap Customizations
+ * ---------------------------------- */
+legend {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    margin-bottom: 7px;
+    border: 1px solid #DDD;
+}
+
+.navbar-form .form-control {
+    padding: 3px 6px;
+}
+
+.breadcrumb .form-group {
+    margin-left: -6px;
+}
+
+.breadcrumb .form-control {
+    height: 22px;
+    line-height: 22px;
+    margin-top: -4px;
+    padding: 0px;
+}
+
+.breadcrumb label {
+    margin-bottom: 0px;
+}
+
+.form-group-sm .form-control {
+    height: 22px;
+    padding: 2px 4px;
+    font-size: 11px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+.form-group-sm select.form-control {
+    height: 22px;
+    line-height: 22px;
+}
+
+.form-horizontal .form-group-sm .control-label {
+    padding-top: 2px;
+    padding-right: 4px;
+    font-size: 11px;
+}
+
+.form-group-sm select.form-control {
+    height: 22px;
+    line-height: 22px;
+}
+
+.form-control.select2-sm {
+    padding: 0;
+}
+
+.select2-sm.select2-container .select2-choice {
+    height: 22px;
+    line-height: 22px;
+}
+
+.select2-sm.select2-container .select2-choice abbr {
+    top: 5px;
+}
+
+.select2-sm.select2-container .select2-choice .select2-arrow {
+
+}
+
+/* ----------------------------------
+ * Drop-Down Menu
+ * ---------------------------------- */
+.dropdown-menu {
+    font-size: 12px;
+}
+
+/* ----------------------------------
+ * Menu Styles
+ * ---------------------------------- */
+.menu-panel .glyphicon-chevron-right, .menu-list .glyphicon-chevron-right {
+    float: right;
+}
+
+.menu-list li {
+    list-style: none;
+}
+
+.menu-list .list-group-item {
+    padding: 5px 15px;
+}
+
+
+.menu-list .list-group-item:first-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.menu-list .list-group-item:last-child {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-bottom: -1px;
+}
+
+.menu-list a.list-group-item:focus, a.list-group-item:hover {
+    text-decoration: underline;
+    color: #23527C;
+    background-color: transparent;
+}
+
+.menu-root {
+    background-color: #337AB7; /*#F5F5F5;*/
+    font-weight: bold;
+    color: #fff;
+}
+a.menu-root.list-group-item {
+    color: white;
+}
+a.menu-root.list-group-item:focus, a.menu-root.list-group-item:hover {
+    text-decoration: none;
+    color: #fff; /*#555;*/
+    background-color: #337AB7; /*#F5F5F5;*/
+}
+
+.menu-node {
+    font-weight: bold;
+}
+a.menu-node.list-group-item:focus, a.menu-node.list-group-item:hover {
+    text-decoration: none;
+    color: #555;
+    background-color: #F5F5F5;;
+}
+
+/* ----------------------------------
+ * sidebar
+ * ---------------------------------- */
+
+.sidebar-offcanvas {
+    padding-right: 5px
+}
+.sidebar-offcanvas i {
+    margin-right: 8px
+}
+.toggle-sidebar span {
+    font-size: 18px;
+    margin-right: 10px
+}
+@media screen and (min-width: 768px) {
+    .row-offcanvas {
+        position: relative;
+        -webkit-transition: all .25s ease-out;
+        -moz-transition: all .25s ease-out;
+        transition: all .25s ease-out;
+    }
+    .row-offcanvas-right {
+        right: 20%;
+    }
+    .row-offcanvas-left {
+        left: 20%;
+    }
+    .row-offcanvas-right .sidebar-offcanvas {
+        right: -20%;
+        /* 3 columns */
+    }
+    .row-offcanvas-left .sidebar-offcanvas {
+        left: -20%;
+        /* 3 columns */
+    }
+    .row-offcanvas-right.active {
+        right: 0;
+        /* 3 columns */
+    }
+    .row-offcanvas-left.active {
+        left: 0;
+        /* 3 columns */
+    }
+    .row-offcanvas-right.active .sidebar-offcanvas {
+        /*background-color: rgb(254, 254, 254);*/
+    }
+    .row-offcanvas-left.active .sidebar-offcanvas {
+        /*background-color: rgb(254, 254, 254);*/
+    }
+    .row-offcanvas .content {
+        width: 80%;
+        /* 9 columns */
+        -webkit-transition: all .25s ease-out;
+        -moz-transition: all .25s ease-out;
+        transition: all .25s ease-out;
+    }
+    .row-offcanvas.active .content {
+        width: 100%;
+        /* 12 columns */
+    }
+    .sidebar-offcanvas {
+        position: absolute;
+        top: 0;
+        width: 20%;
+        /* 3 columns */
+    }
+}
+@media screen and (max-width: 767px) {
+    .row-offcanvas {
+        position: relative;
+        -webkit-transition: all .25s ease-out;
+        -moz-transition: all .25s ease-out;
+        transition: all .25s ease-out;
+    }
+    .row-offcanvas-right {
+        right: 0;
+    }
+    .row-offcanvas-left {
+        left: 0;
+    }
+    .row-offcanvas-right .sidebar-offcanvas {
+        right: -50%;
+        /* 6 columns */
+    }
+    .row-offcanvas-left .sidebar-offcanvas {
+        left: -50%;
+        /* 6 columns */
+    }
+    .row-offcanvas-right.active {
+        right: 50%;
+        /* 6 columns */
+    }
+    .row-offcanvas-left.active {
+        left: 50%;
+        /* 6 columns */
+    }
+    .sidebar-offcanvas {
+        position: absolute;
+        top: 0;
+        width: 50%;
+        /* 6 columns */
+    }
+}
+
+/* ----------------------------------
+ * panel heading chevron
+ * ---------------------------------- */
+
+.panel-heading .accordion-toggle:after {
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+    content: "\e114";    /* adjust as needed, taken from bootstrap.css */
+    float: right;        /* adjust as needed */
+    color: grey;         /* adjust as needed */
+}
+.panel-heading .accordion-toggle.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+}
+
+/* ----------------------------------
+ * panel heading button
+ * ---------------------------------- */
+
+a.panel-heading-button {
+    color: #ffffff;
+    margin-top: -2px;
+    margin-right: 20px;
+}
+
+
+/* ----------------------------------
+ * Ace Editor
+ * ---------------------------------- */
+#editor {
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 400px;
+}
+
+#statusBar {
+    margin-bottom: 0;
+}
+
+.ace_status-indicator {
+    color: gray;
+    right: 0;
+    padding-left: 3px;
+    border-left: 1px solid;
+}
+
+/* ----------------------------------
+ * floatThead for bs3
+ * ---------------------------------- */
+table.floatThead-table {
+    border-top: none;
+    border-bottom: none;
+    background-color: #FFF;
+}
+
+/* ----------------------------------
+ * Processing
+ * ---------------------------------- */
+.modal-static {
+    position: fixed;
+    top: 50% !important;
+    left: 50% !important;
+    margin-top: -100px;
+    margin-left: -100px;
+    overflow: visible !important;
+}
+.modal-static,
+.modal-static .modal-dialog,
+.modal-static .modal-content {
+    /*
+    width: 200px;
+    height: 200px;
+    */
+}
+.modal-static .modal-dialog,
+.modal-static .modal-content {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.modal-static .modal-content .icon {
+}
+
+
+/* ----------------------------------
+ * Delete Watcher Button
+ * ---------------------------------- */
+.btn-del-watcher {
+    margin-left: 1px;
+    padding: 0 3px;
+}
+
+/* ----------------------------------
+ * Alternative Text Colors
+ * ---------------------------------- */
+.text-red {
+    color: rgb(209, 91, 71)
+}
+
+
+/* ----------------------------------
+ * MK Box
+ * ---------------------------------- */
+.mk-box {
+    /*
+    margin-left: 0;
+    margin-right: 0;
+    */
+    background-color: darkseagreen;
+    border-width: 12px;
+    border-color: red;
+    border-radius: 4px 4px 0 0;
+    box-shadow: none;
+}
+
+/* ----------------------------------
+ * Variaous Callout Styles
+ * Source: getbootstrap page
+ * ---------------------------------- */
+.bs-callout {
+  margin: 10px 0;
+  padding: 10px;
+  border-left: 4px solid #eee;
+}
+
+.bs-callout h1, h2, h3, h4 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.bs-callout p:last-child {
+  margin-bottom: 0;
+}
+
+/* Variations */
+.bs-callout-danger {
+  background-color: #fdf7f7;
+  border-color: #eed3d7;
+}
+.bs-callout-danger h1, h2, h3, h4 {
+  color: #b94a48;
+}
+.bs-callout-warning {
+  background-color: #faf8f0;
+  border-color: #faebcc;
+}
+.bs-callout-warning h1, h2, h3, h4 {
+  color: #8a6d3b;
+}
+.bs-callout-info {
+  background-color: #f4f8fa;
+  border-color: #bce8f1;
+}
+.bs-callout-info h1, h2, h3, h4 {
+  color: #34789a;
+}
+
+/* ------------------------------------------------------
+ * Dropdown Sub Menu with 3-levels
+ *
+ * http://www.bootply.com/86684
+ * for mobile : http://www.bootply.com/92442
+ * ---------------------------------------------------- */
+.dropdown-submenu{position:relative;}
+.dropdown-submenu>.dropdown-menu{top:0;left:100%;margin-top:-6px;margin-left:-1px;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px;}
+.dropdown-submenu:hover>.dropdown-menu{display:block;}
+.dropdown-submenu>a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 0 5px 5px;border-left-color:#cccccc;margin-top:5px;margin-right:-10px;}
+.dropdown-submenu:hover>a:after{border-left-color:#ffffff;}
+.dropdown-submenu.pull-left{float:none;}.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
+
+/* ------------------------------------------------------
+ * Table Sorter CSS Custimizations
+ * ---------------------------------------------------- */
+
+.tablesorter-bootstrap thead th,
+.tablesorter-bootstrap thead td,
+.tablesorter-bootstrap tfoot th,
+.tablesorter-bootstrap tfoot td {
+    font-family: "Helvetica Neue","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;;
+    font-size: 12px;
+}
+
+
+/* ------------------------------------------------------
+ * Simple MDE Z-Index Fix
+
+
+.editor-toolbar.fullscreen {
+    z-index: 2000;
+}
+* ---------------------------------------------------- */
+
+
+
+/* ------------------------------------------------------
+ * Wiki Text Table Display
+ * ---------------------------------------------------- */
+#wiki-content table td,
+#wiki-content table th {
+	border: 1px solid #ddd;
+	padding: 5px;
+}

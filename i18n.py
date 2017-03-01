@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 Helper module for i18n translation functions.
 
